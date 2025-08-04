@@ -1,7 +1,7 @@
 FROM almalinux:9
 
 # Install nginx and curl (force replace conflicting packages)
-RUN dnf install -y nginx curl --allowerasing && dnf clean all
+RUN dnf install -y nginx 
 
 
 # Remove default index.html
