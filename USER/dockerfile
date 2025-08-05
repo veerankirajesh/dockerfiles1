@@ -1,4 +1,4 @@
-FROM alamlinux:9
+FROM almalinux:9
 CMD ["sleep","100"]
 
 # FROM almalinux:9
