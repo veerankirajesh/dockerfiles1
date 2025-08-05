@@ -1,17 +1,7 @@
 FROM almalinux:9
-
-# Install nginx and curl (force replace conflicting packages)
-RUN dnf install -y nginx 
-
-
-# Remove default index.html
+RUN dnf install nginx -y
 RUN rm -rf /usr/share/nginx/html/index.html
-
-# Download your custom page using curl
-RUN curl -o /usr/share/nginx/html/index.html https://raw.githubusercontent.com/veerankirajesh/roboshop-ansible/main/cart.service
-
-# Set correct permissions
+ADD https://raw.githubusercontent.com/daws-84s/notes/refs/heads/main/session-01.txt /usr/share/nginx/html/index.html
 RUN chmod +r /usr/share/nginx/html/index.html
-
-EXPOSE 80
+# ADD sample-1.tar /tmp/
 CMD ["nginx", "-g", "daemon off;"]
