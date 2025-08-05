@@ -1,10 +1,7 @@
 FROM almalinux:9
-CMD ["sleep","100"]
+RUN dnf install git -y
+RUN useradd rajesh
 
-# FROM almalinux:9
-# RUN dnf install git -y
-# RUN useradd rajesh
-
-# USER rajesh
-# CMD ["google.com"]
-# ENTRYPOINT ["ping"]
+USER rajesh
+CMD ["google.com"]
+ENTRYPOINT ["ping"]
